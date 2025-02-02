@@ -18,13 +18,12 @@ jobs:
         include:
           - platform: 2
             platform_name: ios
-          - platform: 7
-            platform_name: iossimulator
-          - platform: 8
-            platform_name: tvossimulator
-    
-    runs-on: MacStadium
+
+    runs-on: macos-latest
     steps:
+      - name: Install include tools
+        run: brew install temurin@8 ldid make
+
       - name: Remove work folders
         env:
           password: ${{ secrets.ELLIE_MINI_SECRET }}
