@@ -15,7 +15,7 @@ COMMIT      := $(shell git log --oneline | sed '2,10000000d' | cut -b 1-7)
 PLATFORM    ?= 2
 
 # Release vs Debug
-RELEASE ?= 1
+RELEASE ?= 0
 
 # Check if running on github runner
 RUNNER ?= 0
