@@ -21,7 +21,7 @@ void swizzleUIImageMethod(SEL originalAction, SEL swizzledAction) {
     if (originalMethod && swizzledMethod) {
         method_exchangeImplementations(originalMethod, swizzledMethod);
     } else {
-        NSLog(@"[UIKit+hook] Warning: Could not swizzle UIImage methods (%@ and %@),
+        NSLog(@"[UIKit+hook] Warning: Could not swizzle UIImage methods (%@ and %@)",
             NSStringFromSelector(originalAction),
         NSStringFromSelector(swizzledAction));
     }
