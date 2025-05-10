@@ -264,7 +264,7 @@
                 @"hasDetail": @YES,
                 @"icon": @"cursorarrow.click.badge.clock",
                 @"type": self.typeSlider,
-                @"min": @(100),
+                @"min": @(1),
                 @"max": @(1000),
             },
             @{@"key": @"button_scale",
