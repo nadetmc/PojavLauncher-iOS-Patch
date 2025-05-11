@@ -30,6 +30,7 @@ void swizzleUIImageMethod(SEL originalAction, SEL swizzledAction) {
 void init_hookUIKitConstructor(void) {
     swizzle(UIDevice.class, @selector(userInterfaceIdiom), @selector(hook_userInterfaceIdiom));
     swizzle(UIImageView.class, @selector(setImage:), @selector(hook_setImage:));
+    swizzle(UIPointerInteraction.class, @selector(_updateInteractionIsEnabled), @selector(hook__updateInteractionIsEnabled));
 
     // Add this line to swizzle the _imageWithSize: method
     swizzleUIImageMethod(NSSelectorFromString(@"_imageWithSize:"), @selector(hook_imageWithSize:));
@@ -200,6 +201,28 @@ void init_hookUIKitConstructor(void) {
 - (BOOL)forceFullHeightInLandscape {
     return YES;
     //UIScreen.mainScreen.traitCollection.userInterfaceIdiom == UIUserInterfaceIdiomPhone;
+}
+@end
+
+// Patch: allow UIHoverGestureRecognizer on iPhone
+// From TrollPad (https://github.com/khanhduytran0/TrollPad/commit/)
+@implementation UIPointerInteraction(hook)
+- (void)hook__updateInteractionIsEnabled {
+    UIView *view = self.view;
+    BOOL enabled = self.enabled;
+    for (id<_UIPointerInteractionDriver> driver in self.drives) {
+        driver.view = enabled ? view : nil;
+    }
+    // To keep it fast, ivar offset is cached for later direct access
+    static ptrdiff_t ivarOff = 0;
+    if (!ivarOff) {
+        ivarOff = ivar_getOffset(class_getInstanceVariable(self.class, "_observingPresentationNotification"));
+    }
+
+    BOOL *observingPresentationNotification = (BOOL *)((uint64_t)(__brige void *)self + ivarOff);
+    if (!enabled && *observingPresentationNotification) {
+        *observingPresentationNotification = NO;
+    }
 }
 @end
 

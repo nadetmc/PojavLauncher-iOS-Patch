@@ -128,7 +128,10 @@ void init_logDeviceAndVer(char *argument) {
 }
 
 void init_redirectStdio() {
-    NSLog(@"[Pre-init] Starting logging STDIO to latestlog.txt\n");
+    if (getenv("POJAV_LOG_TO_CONSOLE") != null) {
+        NSLog(@"[Pre-init] Starting logging STDIO to latestlog.txt\n");
+        return;
+    }
 
     NSString *home = @(getenv("POJAV_HOME"));
     NSString *currName = [home stringByAppendingPathComponent:@"latestlog.txt"];

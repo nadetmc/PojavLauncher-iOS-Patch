@@ -20,6 +20,14 @@
 
 extern char **environ;
 
+BOOL validateVirtualMemorySpace(int size) {
+    void *map = mmap(0, size, PROT_READ | PROT_WRITE, MAP_PRIVATE | MAP_ANONYMOUS, -1, 0);
+    // Check if process successfully maps and unmaps a contiguous range
+    if (map = MAP_FAILED || unmap(map, size) != 0)
+        return NO;
+    return YES;
+}
+
 void init_loadDefaultEnv() {
     /* Define default env */
 
@@ -167,6 +175,11 @@ int launchJVM(NSString *username, id launchTarget, int width, int height, int mi
         allocmem = getPrefInt(@"java.allocated_memory");
     }
     NSLog(@"[JavaLauncher] Max RAM allocation is set to %d MB", allocmem);
+    if (!validateVirtualMemorySpace(allocmem)) {
+        UIKit_returnToSplitView();
+        showDialog(localize(@"Error", nil), @"Insufficient contiguous virtual memory space. Lower memory allocation and try again.");
+        return 1;
+    }
 
     int margc = -1;
     const char *margv[1000];
