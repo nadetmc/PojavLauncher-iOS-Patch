@@ -98,7 +98,7 @@ jobs:
           name: jre8-ios-aarch64
 
       - name: Get JRE8 if error
-        run: wget https://www.mediafire.com/file/qaf9wpl882tpdbb/jre8-ios-aarch64.tar.xz/file
+        run: wget https://www.mediafire.com/file/qaf9wpl882tpdbb/jre8-ios-aarch64.tar.xz/file?dkey=pzhcb9drd3l&r=911.xz/file
 
       - name: Get JRE17
         uses: dawidd6/action-download-artifact@v2
