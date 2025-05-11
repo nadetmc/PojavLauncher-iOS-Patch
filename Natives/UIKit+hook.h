@@ -43,7 +43,7 @@ extern NSNotificationName UIPresentationControllerPresentationTransitionWillBegi
 @end
 
 @protocol _UIPointerInteractionDriver<NSObject>
-@property (assign, nomatomic) UIView *view;
+@property (assign, nonatomic) UIView *view;
 @end
 
 @interface UIPointerInteraction(private)

@@ -128,7 +128,7 @@ void init_logDeviceAndVer(char *argument) {
 }
 
 void init_redirectStdio() {
-    if (getenv("POJAV_LOG_TO_CONSOLE") != null) {
+    if (getenv("POJAV_LOG_TO_CONSOLE") != NULL) {
         NSLog(@"[Pre-init] Starting logging STDIO to latestlog.txt\n");
         return;
     }
