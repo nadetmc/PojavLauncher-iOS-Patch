@@ -219,7 +219,7 @@ void init_hookUIKitConstructor(void) {
         ivarOff = ivar_getOffset(class_getInstanceVariable(self.class, "_observingPresentationNotification"));
     }
 
-    BOOL *observingPresentationNotification = (BOOL *)((uint64_t)(__brige void *)self + ivarOff);
+    BOOL *observingPresentationNotification = (BOOL *)((uint64_t)(__bridge void *)self + ivarOff);
     if (!enabled && *observingPresentationNotification) {
         *observingPresentationNotification = NO;
     }
