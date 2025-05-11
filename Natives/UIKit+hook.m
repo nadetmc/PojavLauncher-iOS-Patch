@@ -210,7 +210,7 @@ void init_hookUIKitConstructor(void) {
 - (void)hook__updateInteractionIsEnabled {
     UIView *view = self.view;
     BOOL enabled = self.enabled;
-    for (id<_UIPointerInteractionDriver> driver in self.drives) {
+    for (id<_UIPointerInteractionDriver> driver in self.drivers) {
         driver.view = enabled ? view : nil;
     }
     // To keep it fast, ivar offset is cached for later direct access
