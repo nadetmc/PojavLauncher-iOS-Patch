@@ -243,8 +243,8 @@
 "preference.title.renderer"="Trình kết xuất";
 "preference.title.renderer.debug.angle"="ANGLE (1.17+) - Xuất ra OpenGL 3.3 (Core Profile, bị giới hạn), nhanh";
 "preference.title.renderer.debug.auto"="Tự động: Gl4es thần thánh hoặc ANGLE";
-"preference.title.renderer.debug.gl4es"="Gl4es thần thánh - Xuất ra OpenGL 2.1, nhanh";
-"preference.title.renderer.debug.zink"="Zink (Mesa 21.0) - Xuất ra OpenGL 4.6, chậm";
+"preference.title.renderer.debug.gl4es"="Gl4es - Xuất ra OpenGL 2.1, nhanh";
+"preference.title.renderer.debug.zink"="Zink (Mesa 21.0) - Xuất ra OpenGL 4.1, chậm";
 "preference.title.renderer.release.angle"="ANGLE";
 "preference.title.renderer.release.auto"="Tự động";
 "preference.title.renderer.release.gl4es"="Gl4es thần thánh - nhanh";
