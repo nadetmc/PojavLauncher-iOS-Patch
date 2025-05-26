@@ -11,7 +11,7 @@ static EGLDisplay g_EglDisplay;
 static egl_library handle;
 
 void dlsym_EGL() {
-    void* dl_handle = dlopen("@rpath/libtinygl4angle.dylib", RTLD_GLOBAL);
+    void* dl_handle = dlopen("@rpath/libmobileglues.dylib", RTLD_GLOBAL);
 /*
     // Currently not needed
     if (!dl_handle) {
