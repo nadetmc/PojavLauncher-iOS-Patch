@@ -137,6 +137,7 @@ NSArray* getRendererKeys(BOOL containsDefault) {
     NSMutableArray *array = @[
         @"auto",
         @ RENDERER_NAME_GL4ES,
+        @ RENDERER_NAME_GL4ES_114,
         @ RENDERER_NAME_MTL_ANGLE,
         @ RENDERER_NAME_MOBILEGLUES,
         @ RENDERER_NAME_VK_ZINK
@@ -154,6 +155,7 @@ NSArray* getRendererNames(BOOL containsDefault) {
 
     array = @[
         localize(@"preference.title.renderer.debug.auto", nil),
+        localize(@"preference.title.renderer.debug.gl4es_114", nil),
         localize(@"preference.title.renderer.debug.gl4es", nil),
         localize(@"preference.title.renderer.debug.angle", nil),
         localize(@"preference.title.renderer.debug.mobileglues", nil),
