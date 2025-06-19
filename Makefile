@@ -247,7 +247,7 @@ check:
 	)
 
 native:
-	echo '[PojavLauncher v$(VERSION)] native - start'
+	echo '[PojavLauncher Patch v$(VERSION)] native - start'
 	mkdir -p $(WORKINGDIR)
 	cd $(WORKINGDIR) && cmake . \
 		-DCMAKE_BUILD_TYPE=$(CMAKE_BUILD_TYPE) \
@@ -313,7 +313,7 @@ payload: native java jre assets
 	$(call METHOD_DIRCHECK,$(WORKINGDIR)/PojavLauncherPatch.app/libs)
 	$(call METHOD_DIRCHECK,$(WORKINGDIR)/PojavLauncherPatch.app/libs_caciocavallo)
 	$(call METHOD_DIRCHECK,$(WORKINGDIR)/PojavLauncherPatch.app/libs_caciocavallo17)
-	cp -R $(SOURCEDIR)/Natives/resources/en.lproj/LaunchScreen.storyboardc $(WORKINGDIR)/PojavLauncher.app/Base.lproj/ || exit 1
+	cp -R $(SOURCEDIR)/Natives/resources/en.lproj/LaunchScreen.storyboardc $(WORKINGDIR)/PojavLauncherPatch.app/Base.lproj/ || exit 1
 	cp -R $(SOURCEDIR)/Natives/resources/* $(WORKINGDIR)/PojavLauncherPatch.app/ || exit 1
 	cp $(WORKINGDIR)/*.dylib $(WORKINGDIR)/PojavLauncherPatch.app/Frameworks/ || exit 1
 	cp -R $(SOURCEDIR)/JavaApp/libs/others/* $(WORKINGDIR)/PojavLauncherPatch.app/libs/ || exit 1
