@@ -327,9 +327,9 @@ payload: native java jre assets
 	fi
 	ldid -S $(OUTPUTDIR)/Payload/PojavLauncher.app; \
 	if [ '$(TROLLSTORE_JIT_ENT)' == '1' ]; then \
-		ldid -S$(SOURCEDIR)/entitlements.trollstore.xml $(OUTPUTDIR)/Payload/PojavLauncher.app/PojavLauncher; \
+		ldid -S$(SOURCEDIR)/entitlements.trollstore.xml $(OUTPUTDIR)/Payload/PojavLauncher.app/PojavLauncherPatch; \
 	else \
-		ldid -S$(SOURCEDIR)/entitlements.sideload.xml $(OUTPUTDIR)/Payload/PojavLauncher.app/PojavLauncher; \
+		ldid -S$(SOURCEDIR)/entitlements.sideload.xml $(OUTPUTDIR)/Payload/PojavLauncher.app/PojavLauncherPatch; \
 	fi
 	chmod -R 755 $(OUTPUTDIR)/Payload
 	if [ '$(PLATFORM)' != '2' ]; then \
@@ -343,9 +343,9 @@ deploy:
 	cd $(OUTPUTDIR); \
 	if [ '$(IOS)' = '1' ]; then \
 		ldid -S $(WORKINGDIR)/PojavLauncher.app || exit 1; \
-		ldid -S$(SOURCEDIR)/entitlements.trollstore.xml $(WORKINGDIR)/PojavLauncher.app/PojavLauncher || exit 1; \
+		ldid -S$(SOURCEDIR)/entitlements.trollstore.xml $(WORKINGDIR)/PojavLauncher.app/PojavLauncherPatch || exit 1; \
 		sudo mv $(WORKINGDIR)/*.dylib $(PREFIX)Applications/PojavLauncher.app/Frameworks/ || exit 1; \
-		sudo mv $(WORKINGDIR)/PojavLauncher.app/PojavLauncher $(PREFIX)Applications/PojavLauncher.app/PojavLauncher || exit 1; \
+		sudo mv $(WORKINGDIR)/PojavLauncher.app/PojavLauncherPatch $(PREFIX)Applications/PojavLauncher.app/PojavLauncherPatch || exit 1; \
 		sudo mv $(SOURCEDIR)/JavaApp/build/*.jar $(PREFIX)Applications/PojavLauncher.app/libs/ || exit 1; \
 		cd $(PREFIX)Applications/PojavLauncher.app/Frameworks || exit 1; \
 		sudo chown -R 501:501 $(PREFIX)Applications/PojavLauncher.app/* || exit 1; \
@@ -381,7 +381,7 @@ package: payload
 	
 dsym: payload
 	echo '[PojavLauncher v$(VERSION)] dsym - start'
-	dsymutil --arch arm64 $(OUTPUTDIR)/Payload/PojavLauncher.app/PojavLauncher; \
+	dsymutil --arch arm64 $(OUTPUTDIR)/Payload/PojavLauncher.app/PojavLauncherPatch; \
 	rm -rf $(OUTPUTDIR)/PojavLauncher.dSYM; \
 	mv $(OUTPUTDIR)/Payload/PojavLauncher.app/PojavLauncher.dSYM $(OUTPUTDIR)/PojavLauncher.dSYM
 	echo '[PojavLauncher v$(VERSION)] dsym - end'
