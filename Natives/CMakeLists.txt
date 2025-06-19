@@ -180,7 +180,7 @@ add_executable(PojavLauncherPatch
 )
 
 if("${CMAKE_HOST_SYSTEM_NAME}" MATCHES "Linux|^GNU$|Android")
-target_sources(PojavLauncher PUBLIC non_darwin_utils.m)
+target_sources(PojavLauncherPatch PUBLIC non_darwin_utils.m)
 endif()
 
 target_link_libraries(PojavLauncherPatch

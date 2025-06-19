@@ -514,7 +514,7 @@ public class GLFW
 
     static {
         try {
-            System.load(System.getenv("BUNDLE_PATH") + "/PojavLauncher");
+            System.load(System.getenv("BUNDLE_PATH") + "/PojavLauncherPatch");
         } catch (UnsatisfiedLinkError e) {
             e.printStackTrace();
         }
