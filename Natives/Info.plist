@@ -9,25 +9,25 @@
 	<key>CFBundleDevelopmentRegion</key>
 	<string>en</string>
 	<key>CFBundleDisplayName</key>
-	<string>PojavLauncher</string>
+	<string>PojavLauncherPatch</string>
 	<key>CFBundleExecutable</key>
-	<string>PojavLauncher</string>
+	<string>PojavLauncherPatch</string>
 	<key>CFBundleIcons</key>
 	<dict>
 		<key>CFBundleAlternateIcons</key>
 		<dict>
-			<key>AppIcon-Development</key>
-			<dict>
-				<key>CFBundleIconFiles</key>
-				<array>
-					<string>AppIcon-Development60x60</string>
-				</array>
-			</dict>
 			<key>AppIcon-Dark</key>
 			<dict>
 				<key>CFBundleIconFiles</key>
 				<array>
 					<string>AppIcon-Dark60x60</string>
+				</array>
+			</dict>
+			<key>AppIcon-Development</key>
+			<dict>
+				<key>CFBundleIconFiles</key>
+				<array>
+					<string>AppIcon-Development60x60</string>
 				</array>
 			</dict>
 		</dict>
@@ -74,7 +74,7 @@
 		</dict>
 	</dict>
 	<key>CFBundleIdentifier</key>
-	<string>net.kdt.pojavlauncher</string>
+	<string>net.kdt.pojavlauncher.patch</string>
 	<key>CFBundleInfoDictionaryVersion</key>
 	<string>6.0</string>
 	<key>CFBundleName</key>
@@ -89,19 +89,15 @@
 	<array>
 		<dict>
 			<key>CFBundleURLName</key>
-			<string>net.kdt.pojavlauncher.urlscheme</string>
+			<string>net.kdt.pojavlauncher.patch.urlscheme</string>
 			<key>CFBundleURLSchemes</key>
 			<array>
-				<string>pojavlauncher</string>
+				<string>pojavlauncherpatch</string>
 			</array>
 		</dict>
 	</array>
 	<key>CFBundleVersion</key>
 	<string>3.0</string>
-	<key>GCSupportsControllerUserInteraction</key>
-	<true/>
-	<key>UILaunchStoryboardName</key>
-	<string>LaunchScreen</string>
 	<key>GCSupportedGameControllers</key>
 	<array>
 		<dict>
@@ -109,6 +105,8 @@
 			<string>ExtendedGamepad</string>
 		</dict>
 	</array>
+	<key>GCSupportsControllerUserInteraction</key>
+	<true/>
 	<key>LSApplicationQueriesSchemes</key>
 	<array>
 		<string>filza</string>
@@ -126,9 +124,9 @@
 		<string>_altserver._tcp</string>
 	</array>
 	<key>NSLocalNetworkUsageDescription</key>
-	<string>PojavLauncher uses the local network to find and communicate with AltServer and LAN servers.</string>
+	<string>PojavLauncher Patch uses the local network to find and communicate with AltServer and LAN servers.</string>
 	<key>NSMicrophoneUsageDescription</key>
-	<string>PojavLauncher uses the microphone to enable support for voice chat mods.</string>
+	<string>PojavLauncher Patch uses the microphone to enable support for voice chat mods.</string>
 	<key>UIApplicationSceneManifest</key>
 	<dict>
 		<key>UIApplicationSupportsMultipleScenes</key>
@@ -157,7 +155,7 @@
 	</dict>
 	<key>UIApplicationSupportsIndirectInputEvents</key>
 	<true/>
-	<key>UIBackgroundModes</key>	
+	<key>UIBackgroundModes</key>
 	<array>
 		<string>fetch</string>
 	</array>
@@ -169,6 +167,8 @@
 	</array>
 	<key>UIFileSharingEnabled</key>
 	<true/>
+	<key>UILaunchStoryboardName</key>
+	<string>LaunchScreen</string>
 	<key>UIRequiredDeviceCapabilities</key>
 	<array>
 		<string>arm64</string>
@@ -188,11 +188,11 @@
 		<string>UIInterfaceOrientationLandscapeLeft</string>
 		<string>UIInterfaceOrientationLandscapeRight</string>
 	</array>
-	<key>UIWhitePointAdaptivityStyle</key>
-	<string>UIWhitePointAdaptivityStyleGame</string>
-	<key>UIViewControllerBasedStatusBarAppearance</key>
-	<true/>
 	<key>UISupportsDocumentBrowser</key>
 	<true/>
+	<key>UIViewControllerBasedStatusBarAppearance</key>
+	<true/>
+	<key>UIWhitePointAdaptivityStyle</key>
+	<string>UIWhitePointAdaptivityStyleGame</string>
 </dict>
 </plist>

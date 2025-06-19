@@ -9,9 +9,11 @@
 /* Begin PBXFileReference section */
 		054957CB2986E91000EFD4CE /* Makefile */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.make; path = Makefile; sourceTree = "<group>"; };
 		054957CC2986E91000EFD4CE /* .gitmodules */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = .gitmodules; sourceTree = "<group>"; };
-		054957CD2986E91000EFD4CE /* entitlements.xml */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; path = entitlements.xml; sourceTree = "<group>"; };
-		054957CE2986E91000EFD4CE /* .github */ = {isa = PBXFileReference; lastKnownFileType = folder; path = .github; sourceTree = "<group>"; };
-		054957CF2986E91000EFD4CE /* .gitignore */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = .gitignore; sourceTree = "<group>"; };
+		054957CD2986E91000EFD4CE /* entitlements.codesign.xml */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; path = entitlements.codesign.xml; sourceTree = "<group>"; };
+		054957CE2986E91000EFD4CE /* entitlements.sideload.xml */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; path = entitlements.sideload.xml; sourceTree = "<group>"; };
+		054957CF2986E91000EFD4CE /* entitlements.trollstore.xml */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; path = entitlements.trollstore.xml; sourceTree = "<group>"; };
+		054957CG2986E91000EFD4CE /* .github */ = {isa = PBXFileReference; lastKnownFileType = folder; path = .github; sourceTree = "<group>"; };
+		054957CH2986E91000EFD4CE /* .gitignore */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = .gitignore; sourceTree = "<group>"; };
 		054957D02986E91000EFD4CE /* Natives */ = {isa = PBXFileReference; lastKnownFileType = folder; path = Natives; sourceTree = "<group>"; };
 		054957D12986E91000EFD4CE /* README.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
 		054957D22986E91000EFD4CE /* crowdin.yml */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.yaml; path = crowdin.yml; sourceTree = "<group>"; };
@@ -27,7 +29,9 @@
 				054957CF2986E91000EFD4CE /* .gitignore */,
 				054957CC2986E91000EFD4CE /* .gitmodules */,
 				054957D22986E91000EFD4CE /* crowdin.yml */,
-				054957CD2986E91000EFD4CE /* entitlements.xml */,
+				054957CD2986E91000EFD4CE /* entitlements.codesign.xml */,
+				054957CE2986E91000EFD4CE /* entitlements.sideload.xml */,
+				054957CF2986E91000EFD4CE /* entitlements.trollstore.xml */,
 				054957D32986E91000EFD4CE /* JavaApp */,
 				054957D42986E91000EFD4CE /* LICENSE */,
 				054957CB2986E91000EFD4CE /* Makefile */,
@@ -49,9 +53,9 @@
 			buildWorkingDirectory = "";
 			dependencies = (
 			);
-			name = PojavLauncher;
+			name = PojavLauncher Patch;
 			passBuildSettingsInEnvironment = 1;
-			productName = PojavLauncher;
+			productName = PojavLauncher Patch;
 		};
 /* End PBXLegacyTarget section */
 
