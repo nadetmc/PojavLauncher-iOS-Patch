@@ -383,7 +383,7 @@ dsym: payload
 	echo '[PojavLauncher Patch v$(VERSION)] dsym - start'
 	dsymutil --arch arm64 $(OUTPUTDIR)/Payload/PojavLauncherPatch.app/PojavLauncherPatch; \
 	rm -rf $(OUTPUTDIR)/PojavLauncherPatch.dSYM; \
-	mv $(OUTPUTDIR)/Payload/PojavLauncher.app/PojavLauncher.dSYM $(OUTPUTDIR)/PojavLauncherPatch.dSYM
+	mv $(OUTPUTDIR)/Payload/PojavLauncherPatch.app/PojavLauncherPatch.dSYM $(OUTPUTDIR)/PojavLauncherPatch.dSYM
 	echo '[PojavLauncher Patch v$(VERSION)] dsym - end'
 	
 codesign:
