@@ -584,7 +584,7 @@ public class GLFW
         throw new UnsupportedOperationException();
     }
 
-    private static final SharedLibrary GLFW = new MacOSXLibraryDL("PoạvLauncherPatch", DynamicLinkLoader.RTLD_DEFAULT);
+    private static final SharedLibrary GLFW = new MacOSXLibraryDL("PojavLauncherPatch", DynamicLinkLoader.RTLD_DEFAULT);
 
 
     /** Contains the function pointers loaded from the glfw {@link SharedLibrary}. */
