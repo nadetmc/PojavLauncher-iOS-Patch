@@ -28,7 +28,10 @@ void swizzleUIImageMethod(SEL originalAction, SEL swizzledAction) {
 }
 
 void init_hookUIKitConstructor(void) {
-    swizzle(UIDevice.class, @selector(userInterfaceIdiom), @selector(hook_userInterfaceIdiom));
+    UIUserInterfaceIdiom idiom = getPrefBool(@"debug.debug_ipad_ui") ? UIUserInterfaceIdiomPad : UIUserInterfaceIdiomPhone;
+    [UIDevice.currentDevice _setActiveUserInterfaceIdiom:idiom];
+    [UIScreen.mainScreen _setUserInterfaceIdiom:idiom];
+
     swizzle(UIImageView.class, @selector(setImage:), @selector(hook_setImage:));
 
     // Add this line to swizzle the _imageWithSize: method
@@ -52,16 +55,6 @@ void init_hookUIKitConstructor(void) {
 
 - (NSString *)completeOSVersion {
     return [NSString stringWithFormat:@"%@ %@ (%@)", self.systemName, self.systemVersion, self.buildVersion];
-}
-
-- (UIUserInterfaceIdiom)hook_userInterfaceIdiom {
-    if (getPrefBool(@"debug.debug_ipad_ui")) {
-        return UIUserInterfaceIdiomPad;
-    } else if (self.hook_userInterfaceIdiom == UIUserInterfaceIdiomTV) {
-        return self.hook_userInterfaceIdiom;
-    } else {
-        return UIUserInterfaceIdiomPhone;
-    }
 }
 
 @end
