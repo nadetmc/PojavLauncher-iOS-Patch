@@ -1,5 +1,5 @@
 # PojavLauncher iOS Patch
-[![Development build](https://github.com/congcq/PojavLauncher-iOS-Patch/actions/workflows/development.yml/badge.svg?branch=main)](https://github.com/PojavLauncherTeam/PojavLauncher_iOS/actions/workflows/development.yml)
+[![Development build](https://github.com/congcq/PojavLauncher-iOS-Patch/actions/workflows/development.yml/badge.svg?branch=main)](https://github.com/congcq/PojavLauncher-iOS-Patch/actions/workflows/development.yml)
 [![Discord](https://img.shields.io/discord/724163890803638273.svg?label=&logo=discord&logoColor=ffffff&color=7389D8&labelColor=6A7EC2)](https://discord.gg/nUpEeqRBqR)
 
 
