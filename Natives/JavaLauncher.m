@@ -99,7 +99,7 @@ void init_loadCustomJvmFlags(int* argc, const char** argv) {
 int launchJVM(NSString *username, id launchTarget, int width, int height, int minVersion) {
     NSLog(@"[JavaLauncher] Beginning JVM launch");
 
-    if (NSBundle.mainBundle.infoDictionary[@"LCDataUUID"]) {
+    if (NSFileManager.defaultManager fileExistsAtPath:[NSBundle.mainBundle.bundlePath stringByAppendingPathComponent:@"LSAppInfo.plist"]]) {
         NSDebugLog(@"[JavaLauncher] Running in LiveContainer, skipping dyld patch");
     } else {
         if (@available(iOS 19.0, *)) {
