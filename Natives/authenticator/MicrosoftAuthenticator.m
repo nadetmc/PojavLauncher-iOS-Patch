@@ -221,7 +221,6 @@ typedef void(^XSTSCallback)(NSString *xsts, NSString *uhs);
         callback(nil, YES);
         return;
     }
-    [self saveChanges];
 
     if ([NSDate.date timeIntervalSince1970] > [self.authData[@"expiresAt"] longValue]) {
         [self acquireAccessToken:self.tokenData[@"refreshToken"] refresh:YES callback:callback];

@@ -102,8 +102,12 @@ int launchJVM(NSString *username, id launchTarget, int width, int height, int mi
     if (NSBundle.mainBundle.infoDictionary[@"LCDataUUID"]) {
         NSDebugLog(@"[JavaLauncher] Running in LiveContainer, skipping dyld patch");
     } else {
-        // Activate Library Validation bypass for external runtime and dylibs (JNA, etc)
-        init_bypassDyldLibValidation();
+        if (@available(iOS 19.0, *)) {
+            // Disable Library Validtion bypass for iOS 26 because of stricter JIT
+        } else {
+            // Activate Library Validation bypass for external runtime and dylibs (JNA, etc)
+            init_bypassDyldLibValidation();
+        }
     }
 
 
